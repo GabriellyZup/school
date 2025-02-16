@@ -1,17 +1,17 @@
-# school
+ # school
 Exercício pratico de Postgresql e Crud
 
-# Projeto Escola
+ # Projeto Escola
 
-        Este projeto é uma aplicação Spring Boot que gerencia informações de alunos em um banco de dados PostgreSQL chamado `escola`. Ele foi desenvolvido para atender a uma regra de negócios específica, incluindo a criação de um banco de dados, manipulação de tabelas e a implementação de endpoints REST para operações CRUD.
+        Este projeto é uma aplicação Spring Boot que gerencia informações de alunos em um banco de dados PostgreSQL chamado 'escola'. Ele foi desenvolvido para atender a uma regra de negócios específica, incluindo a criação de um banco de dados, manipulação de tabelas e a implementação de endpoints REST para operações CRUD.
 
-        ## Introdução
+## Introdução
 
         O objetivo deste projeto é fornecer uma API REST para gerenciar alunos, permitindo operações como criação, leitura, atualização e exclusão (CRUD). A aplicação utiliza o framework Spring Boot e se conecta a um banco de dados PostgreSQL.
 
-        ## Instalação
+## Instalação
 
-        ### Dependências
+### Dependências
 
         Certifique-se de ter as seguintes ferramentas instaladas:
 
@@ -20,31 +20,31 @@ Exercício pratico de Postgresql e Crud
         - [PostgreSQL](https://www.postgresql.org/)
         - [Spring Boot](https://spring.io/projects/spring-boot)
 
-        ### Configuração do Banco de Dados
+### Configuração do Banco de Dados
 
-        1. Acesse o terminal do PostgreSQL e execute os seguintes comandos para criar o banco de dados e a tabela:
+ 1. Acesse o terminal do PostgreSQL e execute os seguintes comandos para criar o banco de dados e a tabela:
 
-        ```sql
-        -- Criação do banco de dados
-        CREATE DATABASE school;
+```sql
+-- Criação do banco de dados
+    CREATE DATABASE school;
 
-        -- Conexão com o banco de dados
-        \c school;
+    -- Conexão com o banco de dados
+    \c school;
 
-        -- Criação da tabela aluno
+    -- Criação da tabela aluno
         CREATE TABLE aluno (
             id SERIAL PRIMARY KEY,
             nome VARCHAR(255) NOT NULL,
             idade INT NOT NULL
         );
 
-        -- Inserção de dados na tabela
+ -- Inserção de dados na tabela
         INSERT INTO aluno (nome, idade) VALUES ('João', 20), ('Maria', 22), ('Pedro', 19);
-        ```
+```
 
-        2. Configure as credenciais do banco de dados no arquivo `application.yml`:
+2. Configure as credenciais do banco de dados no arquivo `application.yml`:
 
-        ```yaml
+   ```yaml
         spring:
           datasource:
             url: jdbc:postgresql://localhost:5432/escola
@@ -58,26 +58,26 @@ Exercício pratico de Postgresql e Crud
             properties:
               hibernate:
                 format_sql: true
-        ```
+   ```
 
-        ### Comandos para Executar o Projeto
+   ### Comandos para Executar o Projeto
 
-        1. Clone o repositório:
+   1. Clone o repositório:
 
         ```bash
-        git clone <URL_DO_REPOSITORIO>
-        cd <NOME_DO_REPOSITORIO>
+        git clone git@github.com:GabriellyZup/school.git
+        cd school
         ```
 
-        2. Compile e execute o projeto:
+  2. Compile e execute o projeto:
 
         ```bash
         mvn spring-boot:run
         ```
 
-        ## Uso
+     ## Uso
 
-        ### Endpoints Disponíveis
+     ### Endpoints Disponíveis
 
         - **GET /alunos**: Retorna a lista de todos os alunos.
         - **GET /alunos/{id}**: Retorna os detalhes de um aluno específico.
@@ -85,7 +85,7 @@ Exercício pratico de Postgresql e Crud
         - **PUT /alunos/{id}**: Atualiza as informações de um aluno existente.
         - **DELETE /alunos/{id}**: Remove um aluno.
 
-        ### Exemplo de Requisição
+     ### Exemplo de Requisição
 
         **POST /alunos**
 
@@ -106,9 +106,9 @@ Exercício pratico de Postgresql e Crud
         }
         ```
 
-        ## Validação
+     ## Validação
 
-        ### Exemplo de JSON para Testes
+     ### Exemplo de JSON para Testes
 
         **POST /alunos**
 
